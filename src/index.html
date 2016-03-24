@@ -7,18 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Angular2 Form DEMO</title>
   <base href="/">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+  <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,400italic,500,500italic,700,700italic|Roboto:400,400italic,500,500italic,700,700italic|Material+Icons" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles/material.css">
+  <link rel="stylesheet" href="./styles/custom.css">
   <!-- IE required polyfills (from CDN), in this exact order -->
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.9.0/fetch.js"></script>-->
-  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>-->
-
   <!-- inject:css -->
   <!-- endinject -->
 </head>
 <body>
-
-<demo-app>Loading Demo-App...</demo-app>
+  <demo-app>Loading Demo-App...</demo-app>
 
 <script>
   // function.name (all IE)
@@ -37,7 +36,6 @@
     });
   }
 </script>
-
 <!-- shims:js -->
 <!-- endinject -->
 
@@ -66,8 +64,7 @@
 <!-- endinject -->
 
 <script>
-  System.import('bootstrap')
-      .then(null, console.error.bind(console));
+  System.import('bootstrap').then(null, console.error.bind(console));
 </script>
 </body>
 </html>
