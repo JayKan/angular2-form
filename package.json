@@ -4,7 +4,7 @@
   "description": "Angular2 form examples",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "typings install"
+    "demo-app": "gulp serve.dev"
   },
   "author": "Jay Kan",
   "license": "MIT",
@@ -18,14 +18,13 @@
     "es6-shim": "^0.33.3",
     "gulp": "~3.9.0",
     "gulp-typescript": "2.9.2",
-    "moment": "^2.12.0",
     "reflect-metadata": "0.1.2",
     "rxjs": "5.0.0-beta.2",
     "systemjs": "~0.19.18",
-    "underscore": "^1.8.3",
     "zone.js": "0.5.15"
   },
   "devDependencies": {
+    "express": "^4.13.3",
     "async": "^1.4.2",
     "ng2lint": "0.0.6",
     "browser-sync": "^2.11.1",
