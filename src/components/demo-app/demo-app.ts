@@ -6,7 +6,8 @@ import { BasicFormDemo } from '../basic-form/basic-form';
   selector: 'demo-app',
   templateUrl: 'components/demo-app/demo-app.component.html',
   directives: [ROUTER_DIRECTIVES],
-  providers: [ROUTER_PROVIDERS]
+  providers: [ROUTER_PROVIDERS],
+  encapsulation: ViewEncapsulation.None
 })
 
 @RouteConfig([
@@ -14,7 +15,6 @@ import { BasicFormDemo } from '../basic-form/basic-form';
 ])
 
 export class AppComponent {
-
   menuItems: Array<any>;
   constructor() {
     this.menuItems = [

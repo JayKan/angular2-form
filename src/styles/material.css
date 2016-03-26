@@ -165,7 +165,7 @@ main {
 }
 
 html, body {
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: "Roboto Mono", "Roboto", "Helvetica", "Arial", sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px
@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Roboto Mono", "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400;
     line-height: 1.35;
     letter-spacing: -.02em;
@@ -192,7 +192,7 @@ h1 {
 }
 
 h1, h2 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Roboto Mono", "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400
 }
 
@@ -211,7 +211,7 @@ h3 {
 }
 
 h3, h4 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: "Roboto Mono", "Roboto", "Helvetica", "Arial", sans-serif;
     font-weight: 400
 }
 
@@ -230,8 +230,7 @@ h5 {
 }
 
 h5, h6 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    margin: 24px 0 16px
+    font-family: "Roboto Mono", "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 h6 {
