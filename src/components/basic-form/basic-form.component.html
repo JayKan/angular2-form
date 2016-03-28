@@ -2,6 +2,7 @@
   <h5>Basic Form</h5>
   <hr class="border">
   <form *ngIf="active" (ngSubmit)="onSubmit()" #basicForm="ngForm">
+    <pre>{{ diagnostic }}</pre>
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text"

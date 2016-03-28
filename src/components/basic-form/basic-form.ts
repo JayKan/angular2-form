@@ -35,12 +35,12 @@ export class BasicFormDemo implements OnInit {
     }, 0);
   }
 
-  // Reveal in html:
-  // Name via form.controls {{ showFormControls(basicForm) }}
   showFormControls(form: NgForm): any {
-    var formControls = form && form.controls['name'] &&
-                       form.controls['name'].value;
-    console.log('------- Form Control Value ------: ', formControls);
-    return formControls;
+    return form && form.controls['name'] &&
+           form.controls['name'].value;
+  }
+
+  get diagnostic() {
+    return JSON.stringify(this.model);
   }
 }
