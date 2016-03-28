@@ -1,5 +1,5 @@
 import { bootstrap } from 'angular2/platform/browser';
-import { AppComponent } from './components/demo-app/demo-app';
+import { AppComponent } from './demo-app/demo-app';
 
 bootstrap(AppComponent, [])
   .then(success => console.log('Bootstrap success'))
