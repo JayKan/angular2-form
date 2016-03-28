@@ -7,7 +7,8 @@ import { BasicFormDemo } from '../basic-form/basic-form';
   templateUrl: 'components/demo-app/demo-app.component.html',
   directives: [ROUTER_DIRECTIVES],
   providers: [ROUTER_PROVIDERS],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['components/demo-app/demo-app.component.css']
 })
 
 @RouteConfig([
