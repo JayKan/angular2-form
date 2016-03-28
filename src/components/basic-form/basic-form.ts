@@ -1,11 +1,10 @@
 import { Component, OnInit } from 'angular2/core';
-import { FORM_DIRECTIVES, NgForm } from 'angular2/common';
+import { NgForm } from 'angular2/common';
 import { BasicFormModel } from './basic-form.model';
 import { uniqueId } from '../../core/unique-id';
 
 @Component({
   selector: 'basic-form',
-  directives: [FORM_DIRECTIVES],
   templateUrl: 'components/basic-form/basic-form.component.html'
 })
 
@@ -18,7 +17,9 @@ export class BasicFormDemo implements OnInit {
   payload: string;
 
   // basic-form model
-  model = new BasicFormModel(uniqueId(), 'Jay Kan', this.powers[0], '');
+  model = new BasicFormModel(uniqueId(), 'Jay Kan', this.powers[0], 'Default sample description...');
+
+  constructor() {}
 
   ngOnInit(): void {}
 
