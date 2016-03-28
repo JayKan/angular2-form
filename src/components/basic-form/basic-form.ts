@@ -1,6 +1,7 @@
 import { Component, OnInit } from 'angular2/core';
 import { FORM_DIRECTIVES, NgForm } from 'angular2/common';
 import { BasicFormModel } from './basic-form.model';
+import { uniqueId } from '../../core/unique-id';
 
 @Component({
   selector: 'basic-form',
@@ -17,7 +18,7 @@ export class BasicFormDemo implements OnInit {
   payload: string;
 
   // basic-form model
-  model = new BasicFormModel(18, 'Jay Kan', this.powers[0], '');
+  model = new BasicFormModel(uniqueId(), 'Jay Kan', this.powers[0], '');
 
   ngOnInit(): void {}
 
@@ -27,7 +28,7 @@ export class BasicFormDemo implements OnInit {
   }
 
   newHero(): void {
-    this.model = new BasicFormModel(20, '', '', '');
+    this.model = new BasicFormModel(uniqueId(), '', '', '');
     this.active = false;
     setTimeout(() => {
       this.active = true;
