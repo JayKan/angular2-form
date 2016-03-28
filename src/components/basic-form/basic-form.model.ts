@@ -8,6 +8,6 @@ export class BasicFormModel {
     this.id           = id;
     this.name         = name;
     this.power        = power;
-    this.description  = description
+    this.description  = description;
   }
 }
