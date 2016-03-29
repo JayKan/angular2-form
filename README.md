@@ -1,12 +1,17 @@
-# angular2-form
+# Angular2 Forms
 
 # How to start
 
 **Note** that this seed project requires node v4.x.x or higher and npm 2.14.7.
 
-You must have `ts-node` installed as global. If you don't, use:
+
+You must have `ts-node` and `typings` installed as global. If you don't, use:
 
 ```bash
 npm install -g ts-node
+```
+
+```bash
+npm install -g typings
 ```
 
