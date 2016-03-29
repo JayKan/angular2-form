@@ -16,4 +16,13 @@ export class CustomValidators {
     }
     return {'invalidCreditCard': true};
   }
+
+  static emailValidator(control): any {
+    // RFC 2822 compliant regex
+    let valid: boolean = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/.test(control.value);
+    if (valid) {
+      return null;
+    }
+    return {'invalidEmailAddress': true};
+  }
 }
