@@ -36,6 +36,9 @@ html {
 .mdl-navigation a.nav-link.intermediate {
     width: 205px;
 }
+.mdl-navigation a.nav-link.advanced {
+    width: 180px;
+}
 
 hr.border {
     border-top-color: rgba(0, 0, 0, .8);
