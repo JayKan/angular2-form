@@ -2,9 +2,7 @@
 
 In this particular example, we will be creating our form programmatically by using the following:
 
-* **FormBuilder**
-* **ControlGroup**
-* **Validators**
-* **ngFormModel**
-
-  
+- **FormBuilder**
+- **ControlGroup**
+- **Validators**  
+- **ngFormModel**: binds an existing control group to a DOM element.
