@@ -1,5 +1,5 @@
 import { Component, OnInit } from 'angular2/core';
-import { ControlGroup, FormBuilder, Validators } from 'angular2/common';
+import { ControlGroup, FormBuilder, Validators, Control } from 'angular2/common';
 import { CustomValidators } from '../../core/validators';
 
 // An Angular form is a collection of `Control`s in some hierarchy.
@@ -23,13 +23,13 @@ export class IntermediateFormDemo implements OnInit {
   formData: string;
   
   constructor(private _builder: FormBuilder) {}
-
-
+  
   ngOnInit(): void {
     this.myForm = this._builder.group({
-      'firstName': ['Jay', Validators.required],
-      'lastName': ['Kan', Validators.required],
-      'email': ['test@gmail.com', Validators.compose([CustomValidators.emailValidator, Validators.required])],
+      'firstName': ['Test', Validators.required],
+      'lastName': ['User', Validators.required],
+      'email': ['test.user@gmail.com', Validators.compose([CustomValidators.emailValidator, Validators.required])],
+      'creditCard': ['', Validators.compose([CustomValidators.creditCardValidator, Validators.required])],
       'zipCode': ['95133', Validators.compose([CustomValidators.zipCodeValidator, Validators.required])],
       'addressType': ['home', Validators.required]
     });
@@ -38,5 +38,16 @@ export class IntermediateFormDemo implements OnInit {
   onSubmit(): void {
     this.submitted = true;
     this.formData  = JSON.stringify(this.myForm.value, null, 2);
+  }
+
+  clear(): void {
+    for (let c in this.myForm.controls) {
+      this.myForm.controls[c].updateValue('');
+    }
+  }
+
+  get debug(): string {
+    console.log(this.myForm);
+    return JSON.stringify(this.myForm.value, null, 2);
   }
 }

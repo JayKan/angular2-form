@@ -29,11 +29,8 @@ export class BasicFormDemo implements OnInit {
 
   newHero(): void {
     this.model = new BasicFormModel(uniqueId(), '', '', '');
-    this.active = false;
-    setTimeout(() => {
-      this.active = true;
-      this.submitted = false;
-    }, 0);
+    this.active = true;
+    this.submitted = false;
   }
 
   showFormControls(form: NgForm): any {
