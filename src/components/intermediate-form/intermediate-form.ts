@@ -2,8 +2,7 @@ import { Component, OnInit } from 'angular2/core';
 import { 
   ControlGroup, 
   FormBuilder, 
-  Validators,
-  NgForm,
+  Validators
 } from 'angular2/common';
 
 // TODO: add docs for intermediate form
@@ -21,66 +20,7 @@ import {
 // * JSON object that mirrors the form structure.
 @Component({
   selector: 'intermediate-form',
-  template:`
-  <div class="container">
-    <h5>Intermediate Form Example</h5>
-    <hr>
-    <form (ngSubmit)="onSubmit()" [ngFormModel]="myForm" #f="ngForm">    
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" 
-               id="firstName"  
-               class="form-control" 
-               ngControl="firstName"
-               #firstName="ngForm">
-        <div *ngIf="!firstName.valid && firstName.touched" class="alert alert-danger">First name is required</div>
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last name</label>
-        <input type="text"
-               id="lastName"
-               class="form-control"
-               ngControl="lastName"
-               #lastName="ngForm">
-        <div *ngIf="!lastName.valid && lastName.touched" class="alert alert-danger">Last name is required</div>
-      </div>
-      <div class="form-group">
-        <label for="zip">Zip Code</label>
-        <input type="text"
-               id="zip"
-               class="form-control"
-               ngControl="zipCode"
-               #zip="ngForm">
-        <div *ngIf="!zip.valid && zip.touched" class="alert alert-danger">
-          <div *ngIf="zip.errors !== null && zip.errors.required">Zip code is required</div>
-          <div *ngIf="zip.errors !== null && zip.errors.invalidZip">Zip code must be 5 numeric digits</div>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="addressType">Address Type</label>
-        <select class="form-control"
-                id="addressType"
-                ngControl="addressType"
-                #type="ngForm">
-          <option [value]="">Select Address Type</option>
-          <option [value]="'home'">Home Address</option>
-          <option [value]="'billing'">Billing Address</option>
-        </select>
-      </div>
-      
-      <button type="submit" 
-              class="btn btn-default" 
-              [disabled]="!f.form.valid">Submit</button>
-    </form>
-    <hr>
-    <div [hidden]="!submitted">
-      <div *ngIf="formData">
-        <strong>You have submitted the following: </strong>
-        <pre>{{ formData }}</pre>
-      </div>     
-    </div>   
-  </div>
-  `
+  templateUrl: 'components/intermediate-form/intermediate-form.component.html'
 })
 export class IntermediateFormDemo implements OnInit {
 
