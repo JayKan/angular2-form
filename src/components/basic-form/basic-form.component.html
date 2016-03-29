@@ -49,8 +49,8 @@
     <div [hidden]="!submitted">
       <div *ngIf="payload">
         <strong>You have submitted the following: </strong>
+        <pre>{{ payload }}</pre>
       </div>
-      <pre>{{ payload }}</pre>
     </div>
   </form>
 </div>

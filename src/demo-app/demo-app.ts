@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation} from 'angular2/core';
+import { Component, ViewEncapsulation } from 'angular2/core';
 import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
 import { BasicFormDemo } from '../components/basic-form/basic-form';
+import { IntermediateFormDemo } from '../components/intermediate-form/intermediate-form';
 
 @Component({
   selector: 'demo-app',
@@ -12,14 +13,10 @@ import { BasicFormDemo } from '../components/basic-form/basic-form';
 })
 
 @RouteConfig([
-  { path: '/basic-form', name: 'BasicForm', component: BasicFormDemo, useAsDefault: true },
+  { path: '/basic-form', name: 'BasicForm', component: BasicFormDemo, useAsDefault: true  },
+  { path: '/intermediate-form', name: 'IntermediateForm', component: IntermediateFormDemo }
 ])
 
 export class AppComponent {
-  menuItems: Array<any>;
-  constructor() {
-    this.menuItems = [
-      { caption: 'Basic Form', link: ['BasicForm'] }
-    ]
-  }
+  
 }

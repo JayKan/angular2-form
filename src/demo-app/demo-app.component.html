@@ -4,7 +4,8 @@
       <span class="mdl-layout-title">A2 Form DEMO</span>
     </div>
     <div class="mdl-navigation">
-      <a *ngFor="#item of menuItems" [routerLink]="item.link" class="nav-link">{{ item.caption }}</a>
+      <a class="nav-link" [routerLink]="['BasicForm']">Basic Form</a>
+      <a class="nav-link intermediate" [routerLink]="['IntermediateForm']">Intermediate Form</a>
     </div>
   </header>
   <main class="mdl-layout__content layout-margin">
