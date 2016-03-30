@@ -8,7 +8,6 @@ export class QuestionModel {
     let group = {};
     this.questions.forEach(question => {
       group[question.key] = [''];
-      console.log('each question: ', question);
       if (question.required) {
         group[question.key].push(Validators.required);
       }
@@ -25,7 +24,6 @@ export class QuestionModel {
         group[question.key].push(CustomValidators.passwordValidator);
       }
     });
-    console.log('toGroup(): ', group);
     return group;
   }
 }
