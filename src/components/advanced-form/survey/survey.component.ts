@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from 'angular2/core';
 import { QuestionModel } from '../model/model';
 import { ControlGroup, FormBuilder } from 'angular2/common';
+import { ControlMessages } from '../control-messages/control-messages';
 
 @Component({
   selector: 'survey',
+  directives: [ControlMessages],
   template: `
   <div>
     <p>Survey using Dynamic Form:</p>
@@ -23,7 +25,8 @@ import { ControlGroup, FormBuilder } from 'angular2/common';
             </select>
           </div>
         </div>
-             
+        
+        <control-messages [control]="question.key"></control-messages>
       </div>
     </form>
   </div>
