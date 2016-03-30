@@ -47,7 +47,6 @@ export class IntermediateFormDemo implements OnInit {
   }
 
   get debug(): string {
-    console.log(this.myForm);
     return JSON.stringify(this.myForm.value, null, 2);
   }
 }

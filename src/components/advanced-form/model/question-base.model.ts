@@ -5,4 +5,9 @@ export class QuestionBase<T> {
   required: boolean;
   order: number;
   controlType: string;
+
+  emailValidator: boolean;
+  zipCodeValidator: boolean;
+  creditCardValidator: boolean;
+  passwordValidator: boolean;
 }
