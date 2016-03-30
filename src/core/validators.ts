@@ -1,5 +1,15 @@
 export class CustomValidators {
 
+  static getValidatorErrorMessage(code: string, description: string = 'Current field'): string {
+    let config = {
+      'required': `${description} is required`,
+      'invalidCreditCard': 'Is invalid credit card number',
+      'invalidEmailAddress': 'Invalid email address',
+      'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.'
+    };
+    return config[code];
+  }
+
   static zipCodeValidator(control): any {
     // 5 digits numbers only
     let valid: boolean = /^\d{5}$/.test(control.value); 

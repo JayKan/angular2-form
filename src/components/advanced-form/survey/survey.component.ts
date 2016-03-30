@@ -7,10 +7,7 @@ import { ControlGroup, FormBuilder } from 'angular2/common';
   template: `
   <div>
     <p>Survey using Dynamic Form:</p>
-    <form [ngFormModel]="form" (ngSubmit)="onSubmit()" #f="ngForm">
-      <pre>
-        {{ debug }}
-      </pre>
+    <form [ngFormModel]="form" (ngSubmit)="onSubmit()" #f="ngForm">     
       <div *ngFor="#question of model.questions" class="form-group">      
         <label [attr.for]="question.key">{{ question.text }}</label>
         <div [ngSwitch]="question.controlType">
@@ -26,10 +23,7 @@ import { ControlGroup, FormBuilder } from 'angular2/common';
             </select>
           </div>
         </div>
-        
-        <div *ngIf="!f.form.controls[question.key].valid && f.form.controls[question.key].touched" class="alert alert-danger">
-          *required
-        </div>
+             
       </div>
     </form>
   </div>
@@ -55,16 +49,9 @@ export class Survey implements OnInit {
   
   ngOnInit(): void {
     this.form = this._formBuilder.group(this.model.toGroup());
-    // console.log('### Initial Form Value: ', this.form.value);
-    // console.log('### Initial model: ', this.model);
   }
 
   onSubmit(): void {
     
-  }
-
-  get debug(): string {
-    console.log(this.form);
-    return JSON.stringify(this.form.value, null, 2);
   }
 }

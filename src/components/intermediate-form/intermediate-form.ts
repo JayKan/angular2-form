@@ -1,5 +1,5 @@
 import { Component, OnInit } from 'angular2/core';
-import { ControlGroup, FormBuilder, Validators, Control } from 'angular2/common';
+import { ControlGroup, FormBuilder, Validators } from 'angular2/common';
 import { CustomValidators } from '../../core/validators';
 
 // An Angular form is a collection of `Control`s in some hierarchy.
