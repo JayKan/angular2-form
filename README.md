@@ -15,3 +15,16 @@ npm install -g ts-node
 npm install -g typings
 ```
 
+Then you can run: 
+
+```bash
+npm install 
+```
+
+To start the **demo-app**, use:
+
+```bash
+npm run demo-app
+```
+
+
