@@ -26,8 +26,8 @@ export class IntermediateFormDemo implements OnInit {
   
   ngOnInit(): void {
     this.myForm = this._builder.group({
-      'firstName': ['Test', Validators.compose([Validators.required])],
-      'lastName': ['User', Validators.required],
+      'firstName': ['Test', Validators.compose([Validators.required, CustomValidators.stringValidator])],
+      'lastName': ['User', Validators.compose([Validators.required, CustomValidators.stringValidator])],
       'email': ['test.user@gmail.com', Validators.compose([CustomValidators.emailValidator, Validators.required])],
       'creditCard': ['4111222233334444', Validators.compose([CustomValidators.creditCardValidator, Validators.required])],
       'zipCode': ['95133', Validators.compose([CustomValidators.zipCodeValidator, Validators.required])],

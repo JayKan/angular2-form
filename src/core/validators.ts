@@ -3,9 +3,10 @@ export class CustomValidators {
   static getValidatorErrorMessage(code: string, description: string = 'Current field'): string {
     let config = {
       'required': `${description} is required`,
-      'invalidCreditCard': 'Is invalid credit card number',
-      'invalidEmailAddress': 'Invalid email address',
-      'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.'
+      'invalidCreditCard': 'Credit Card number is invalid',
+      'invalidEmailAddress': 'Email address is invalid',
+      'invalidPassword': 'Invalid password. Password must be at least 6 characters long, and contain a number.',
+      'invalidStringValidator': `${description} can't contain any numbers or any special characters`
     };
     return config[code];
   }
@@ -28,7 +29,12 @@ export class CustomValidators {
     return valid ? null : {'invalidEmailAddress': true};
 
   }
-
+  
+  static stringValidator(control): any {
+    let valid: boolean = /^[a-zA-Z-\']+$/.test(control.value);
+    return valid ? null : {'invalidStringValidator': true};
+  }
+  
   static passwordValidator(control): any {
     // {6,100}      - Assert password is between 6 and 100 characters
     // (?=.*[0-9])  - Assert a string has at least one number
