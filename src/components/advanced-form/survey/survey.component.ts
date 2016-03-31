@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from 'angular2/core';
 import { QuestionModel } from '../model/model';
 import { ControlGroup, FormBuilder } from 'angular2/common';
-import { ControlMessages } from '../control-messages/control-messages';
+import { ControlMessages } from '../../../core/control-messages/control-messages';
 
 @Component({
   selector: 'survey',
