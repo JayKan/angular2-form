@@ -26,7 +26,8 @@ export class AdvancedFormDemo {
     question.type       = 'text';
     question.prefill    = 'Jay';
     question.validators = {
-      'required': true
+      'required': true,
+      'stringValidator': true
     };
     this.questionModel.questions.push(question);
 
@@ -37,7 +38,8 @@ export class AdvancedFormDemo {
     question.type       = 'text';
     question.prefill    = 'Kan';
     question.validators = {
-      'required': true
+      'required': true,
+      'stringValidator': true
     };
     this.questionModel.questions.push(question);
 

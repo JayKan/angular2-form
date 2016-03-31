@@ -24,7 +24,6 @@ export class ControlMessages implements OnInit {
   get errorMessages(): any {
     let control = this._formDir.form.find(this.controlName);
     for (let propertyName in control.errors) {
-      console.log('Control Errors: ', control.errors);
       if (control.errors.hasOwnProperty(propertyName) && control.touched) {
         return CustomValidators.getValidatorErrorMessage(propertyName, _normalize(this.controlName));
       }

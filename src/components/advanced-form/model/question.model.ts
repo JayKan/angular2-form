@@ -12,7 +12,8 @@ export class QuestionModel {
       'emailValidator': CustomValidators.emailValidator,
       'zipCodeValidator': CustomValidators.zipCodeValidator,
       'creditCardValidator': CustomValidators.creditCardValidator,
-      'passwordValidator': CustomValidators.passwordValidator
+      'passwordValidator': CustomValidators.passwordValidator,
+      'stringValidator': CustomValidators.stringValidator
     };
     this.questions.forEach(question => {
       group[question.key] = [ question.prefill ? question.prefill : '' ];
