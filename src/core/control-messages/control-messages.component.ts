@@ -1,14 +1,10 @@
 import { Component, Host, Input, OnInit } from 'angular2/core';
 import { NgFormModel } from 'angular2/common';
-import { CustomValidators } from '../../../core/validators';
+import { CustomValidators } from '../validators';
 
 @Component({
   selector: 'control-messages',
-  template: `
-    <div *ngIf="errorMessages !== null" class="alert alert-danger">
-      {{ errorMessages }}
-    </div>
-  `
+  templateUrl: 'core/control-messages/control-messages.component.html'
 })
 export class ControlMessages implements OnInit {
   
@@ -17,9 +13,7 @@ export class ControlMessages implements OnInit {
   
   constructor(@Host() private _formDir: NgFormModel) {}
   
-  ngOnInit(): void {
-    // console.log(this.errorMessages);
-  }
+  ngOnInit(): void {}
   
   get errorMessages(): any {
     let control = this._formDir.form.find(this.controlName);
