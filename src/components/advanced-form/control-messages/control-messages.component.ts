@@ -18,7 +18,7 @@ export class ControlMessages implements OnInit {
   constructor(@Host() private _formDir: NgFormModel) {}
   
   ngOnInit(): void {
-    console.log(this.errorMessages);
+    // console.log(this.errorMessages);
   }
   
   get errorMessages(): any {

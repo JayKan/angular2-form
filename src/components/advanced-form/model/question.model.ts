@@ -19,24 +19,14 @@ export class QuestionModel {
 
       let _validators = [];
 
-      if (question.required) {
-        _validators.push(DEFAULT_VALIDATORS.required);
+      for(let key in question.validators) {
+        if (DEFAULT_VALIDATORS.hasOwnProperty(key)) {
+          _validators.push(DEFAULT_VALIDATORS[key])
+        }
       }
-      if (question.emailValidator) {
-        _validators.push(DEFAULT_VALIDATORS.emailValidator);
-      }
-      if (question.zipCodeValidator) {
-        _validators.push(DEFAULT_VALIDATORS.zipCodeValidator);
-      }
-      if (question.creditCardValidator) {
-        _validators.push(DEFAULT_VALIDATORS.creditCardValidator);
-      }
-      if (question.passwordValidator) {
-        _validators.push(DEFAULT_VALIDATORS.passwordValidator);
-      }
+      
       group[question.key].push(Validators.compose(_validators));
     });
-
     return group;
   }
 }

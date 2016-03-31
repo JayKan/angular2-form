@@ -19,39 +19,47 @@ export class AdvancedFormDemo {
   
   constructor() {
 
-    let question  = new TextBoxQuestion();
-    question.key  = 'lastName';
-    question.text = 'Last name';
-    question.required = true;
-    question.order = 2;
-    question.type = 'text';
-    question.prefill = 'Kan';
-    this.questionModel.questions.push(question); // push each input field to questions collection
-    
-    question = new TextBoxQuestion();
-    question.key = 'firstName';
-    question.text = 'First name';
-    question.required = true;
-    question.order = 1;
-    question.type = 'text';
-    question.prefill = 'Jay';
+    let question        = new TextBoxQuestion();
+    question.order      = 1;
+    question.key        = 'firstName';
+    question.text       = 'First name';
+    question.type       = 'text';
+    question.prefill    = 'Jay';
+    question.validators = {
+      'required': true
+    };
+    this.questionModel.questions.push(question);
+
+    question            = new TextBoxQuestion();
+    question.order      = 2;
+    question.key        = 'lastName';
+    question.text       = 'Last name';
+    question.type       = 'text';
+    question.prefill    = 'Kan';
+    question.validators = {
+      'required': true
+    };
+    this.questionModel.questions.push(question);
+
+    question            = new TextBoxQuestion();
+    question.order      = 3;
+    question.key        = 'emailAddress';
+    question.text       = 'Email address';
+    question.type       = 'email';
+    question.prefill    = 'test@gmail.com';
+    question.validators = {
+      'required': true,
+      'emailValidator': true
+    };
     this.questionModel.questions.push(question);
     
-    question = new TextBoxQuestion();
-    question.key = 'emailAddress';
-    question.text = 'Email address';
-    question.required = true;
-    question.emailValidator = true;
-    question.type = 'text';
-    question.order = 3;
-    question.prefill = 'test@gmail.com';
-    this.questionModel.questions.push(question);
-    
-    let dropDownQuestion = new DropDownQuestion();
-    dropDownQuestion.key = 'country';
-    dropDownQuestion.text = 'Country';
-    dropDownQuestion.required = true;
-    dropDownQuestion.prefill = 'usa';
+    let dropDownQuestion        = new DropDownQuestion();
+    dropDownQuestion.key        = 'country';
+    dropDownQuestion.text       = 'Country';
+    dropDownQuestion.prefill    = 'usa';
+    dropDownQuestion.validators = {
+      'required': true
+    };
     dropDownQuestion.options.push({key: '', value: 'Select a country'});
     dropDownQuestion.options.push({key: 'usa', value: 'USA'});
     dropDownQuestion.options.push({key: 'germany', value: 'Germany'});

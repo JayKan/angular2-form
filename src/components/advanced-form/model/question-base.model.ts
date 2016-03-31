@@ -11,4 +11,5 @@ export class QuestionBase<T> {
   zipCodeValidator: boolean;
   creditCardValidator: boolean;
   passwordValidator: boolean;
+  validators: {[key: string]: boolean};
 }
