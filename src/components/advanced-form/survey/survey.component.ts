@@ -9,7 +9,7 @@ import { ControlMessages } from '../control-messages/control-messages';
   template: `
   <div>
     <p>Survey using Dynamic Form:</p>
-    <form [ngFormModel]="form" (ngSubmit)="onSubmit()" #f="ngForm">     
+    <form (ngSubmit)="onSubmit()" [ngFormModel]="form" #f="ngForm">     
       <div *ngFor="#question of model.questions" class="form-group">      
         <label [attr.for]="question.key">{{ question.text }}</label>
         <div [ngSwitch]="question.controlType">
@@ -24,14 +24,21 @@ import { ControlMessages } from '../control-messages/control-messages';
               <option *ngFor="#o of question.options" [value]="o.key">{{ o.value }}</option>
             </select>
           </div>
-        </div>
-        
+        </div>        
         <control-messages [control]="question.key"></control-messages>
-      </div>
+      </div>      
+      <button type="submit" class="btn btn-default" [disabled]="!form.valid">Submit</button>
     </form>
+    <hr>
+    
+    <div [hidden]="!submitted">
+      <div *ngIf="formData">
+        <strong>You have submitted the following: </strong>
+        <pre>{{ formData }}</pre>
+      </div>
+    </div>
   </div>
   `,
-  inputs: ['model']
 })
 
 export class Survey implements OnInit {
@@ -47,6 +54,7 @@ export class Survey implements OnInit {
   
   form: ControlGroup;
   formData: string;
+  submitted: boolean = false;
   
   constructor(private _formBuilder: FormBuilder) {}
   
@@ -55,6 +63,7 @@ export class Survey implements OnInit {
   }
 
   onSubmit(): void {
-    
+    this.formData = JSON.stringify(this.form.value, null, 2);
+    this.submitted = true;
   }
 }

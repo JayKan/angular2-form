@@ -1,5 +1,4 @@
 import { Component } from 'angular2/core';
-
 import { Survey } from './survey/survey';
 import { QuestionModel, TextBoxQuestion, DropDownQuestion } from './model/model';
 
@@ -26,6 +25,7 @@ export class AdvancedFormDemo {
     question.required = true;
     question.order = 2;
     question.type = 'text';
+    question.prefill = 'Kan';
     this.questionModel.questions.push(question); // push each input field to questions collection
     
     question = new TextBoxQuestion();
@@ -34,21 +34,24 @@ export class AdvancedFormDemo {
     question.required = true;
     question.order = 1;
     question.type = 'text';
+    question.prefill = 'Jay';
     this.questionModel.questions.push(question);
     
     question = new TextBoxQuestion();
     question.key = 'emailAddress';
-    question.text = 'email';
+    question.text = 'Email address';
     question.required = true;
     question.emailValidator = true;
-    question.type = 'email';
+    question.type = 'text';
     question.order = 3;
+    question.prefill = 'test@gmail.com';
     this.questionModel.questions.push(question);
     
     let dropDownQuestion = new DropDownQuestion();
     dropDownQuestion.key = 'country';
     dropDownQuestion.text = 'Country';
     dropDownQuestion.required = true;
+    dropDownQuestion.prefill = 'usa';
     dropDownQuestion.options.push({key: '', value: 'Select a country'});
     dropDownQuestion.options.push({key: 'usa', value: 'USA'});
     dropDownQuestion.options.push({key: 'germany', value: 'Germany'});
