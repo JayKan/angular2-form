@@ -1,6 +1,7 @@
 import { Component, OnInit } from 'angular2/core';
 import { ControlGroup, FormBuilder, Validators } from 'angular2/common';
 import { CustomValidators } from '../../core/validators';
+import { ControlMessages } from '../../core/control-messages/control-messages';
 
 // An Angular form is a collection of `Control`s in some hierarchy.
 // * `Control`s can be at the top level or can be organized in `ControlGroup`s
@@ -8,7 +9,8 @@ import { CustomValidators } from '../../core/validators';
 // * JSON object that mirrors the form structure.
 @Component({
   selector: 'intermediate-form',
-  templateUrl: 'components/intermediate-form/intermediate-form.component.html'
+  templateUrl: 'components/intermediate-form/intermediate-form.component.html',
+  directives: [ControlMessages]
 })
 export class IntermediateFormDemo implements OnInit {
 

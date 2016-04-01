@@ -4,9 +4,7 @@
   <form (ngSubmit)="onSubmit()" [ngFormModel]="myForm" #f="ngForm">
     <div class="form-group">
       <label for="firstName">First Name</label>
-      <input type="text" id="firstName" class="form-control"
-             ngControl="firstName"
-             #firstName="ngForm">
+      <input type="text" id="firstName" class="form-control" ngControl="firstName" #firstName="ngForm">
       <div *ngIf="!firstName.valid && firstName.touched" class="alert alert-danger">
         <div *ngIf="firstName.errors !== null && firstName.errors.required">
           First name is required
@@ -18,11 +16,7 @@
     </div>
     <div class="form-group">
       <label for="lastName">Last name</label>
-      <input type="text"
-             id="lastName"
-             class="form-control"
-             ngControl="lastName"
-             #lastName="ngForm">
+      <input type="text" id="lastName" class="form-control" ngControl="lastName" #lastName="ngForm">
       <div *ngIf="!lastName.valid && lastName.touched" class="alert alert-danger">
         <div *ngIf="lastName.error !== null && lastName.errors.required">
           Last name is required
@@ -34,23 +28,12 @@
     </div>
     <div class="form-group">
       <label for="email">Email address</label>
-      <input type="text"
-             id="email"
-             class="form-control"
-             ngControl="email"
-             #email="ngForm"
-             placeholder="Email address...">
+      <input type="text" id="email" class="form-control" ngControl="email" #email="ngForm" placeholder="Email address...">
       <div *ngIf="!email.valid && email.touched" class="alert alert-danger">Invalid email address</div>
     </div>
     <div class="form-group">
       <label for="creditCard">Credit Card</label>
-      <input type="text"
-             id="creditCard"
-             class="form-control"
-             ngControl="creditCard"
-             #creditCard="ngForm"
-             placeholder="Debit/Credit Card Number"
-      >
+      <input type="text" id="creditCard" class="form-control" ngControl="creditCard" #creditCard="ngForm" placeholder="Debit/Credit Card Number">
       <div *ngIf="!creditCard.valid && creditCard.touched" class="alert alert-danger">
         <div *ngIf="creditCard.errors !== null && creditCard.errors.required">Credit card is required</div>
         <div *ngIf="creditCard.errors !== null && creditCard.errors.invalidCreditCard">Invalid credit card</div>
@@ -58,11 +41,7 @@
     </div>
     <div class="form-group">
       <label for="zip">Zip Code</label>
-      <input type="text"
-             id="zip"
-             class="form-control"
-             ngControl="zipCode"
-             #zip="ngForm">
+      <input type="text" id="zip" class="form-control" ngControl="zipCode" #zip="ngForm">
       <div *ngIf="!zip.valid && zip.touched" class="alert alert-danger">
         <div *ngIf="zip.errors !== null && zip.errors.required">Zip code is required</div>
         <div *ngIf="zip.errors !== null && zip.errors.invalidZip">Zip code must be 5 numeric digits</div>
@@ -70,10 +49,7 @@
     </div>
     <div class="form-group">
       <label for="addressType">Address Type</label>
-      <select class="form-control"
-              id="addressType"
-              ngControl="addressType"
-              #type="ngForm">
+      <select class="form-control" id="addressType" ngControl="addressType" #type="ngForm">
         <option [value]="">Select Address Type</option>
         <option [value]="'home'">Home Address</option>
         <option [value]="'billing'">Billing Address</option>
