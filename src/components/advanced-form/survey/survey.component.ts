@@ -19,7 +19,6 @@ export class Survey implements OnInit {
    */
   @Input()  
   model: QuestionModel;
-  
   form: ControlGroup;
   formData: string;
   submitted: boolean = false;
