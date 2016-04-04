@@ -1,12 +1,20 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">A2 Form DEMO</span>
+      <span class="mdl-layout-title">Angular2 Forms DEMO</span>
     </div>
     <div class="mdl-navigation">
-      <a class="nav-link" [routerLink]="['BasicForm']">Basic Form</a>
-      <a class="nav-link intermediate" [routerLink]="['IntermediateForm']">Intermediate Form</a>
-      <a class="nav-link advanced" [routerLink]="['AdvancedForm']">Advanced Form</a>
+      <div class="form-group" style="padding: 0 30px; margin-bottom:5px;">
+        <label for="demo">Select demo to load:</label>
+        <select class="form-control" id="demo" (input)="select($event)">
+          <option *ngFor="#demo of demos" [value]="demo.name">
+            {{ demo.name }}
+          </option>
+        </select>
+      </div>
+      <!--<a class="nav-link" [routerLink]="['BasicForm']">Basic Form</a>-->
+      <!--<a class="nav-link intermediate" [routerLink]="['IntermediateForm']">Intermediate Form</a>-->
+      <!--<a class="nav-link advanced" [routerLink]="['AdvancedForm']">Advanced Form</a>-->
     </div>
   </header>
   <main class="mdl-layout__content layout-margin">

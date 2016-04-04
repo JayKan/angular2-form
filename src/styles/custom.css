@@ -81,3 +81,16 @@ hr.border {
 .btn.btn-default:hover[disabled] {
     cursor: not-allowed;
 }
+
+.mdl-navigation {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+    background-color: rgb(216, 162, 5);
+    padding-top: 8px;
+    padding-bottom: 5px;
+}

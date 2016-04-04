@@ -9,7 +9,6 @@ import { uniqueId } from '../../core/unique-id';
 })
 
 export class BasicFormDemo implements OnInit {
-
   submitted: boolean = false;
   active: boolean = true;
   powers: Array<string> = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
