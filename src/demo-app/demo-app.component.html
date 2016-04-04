@@ -4,14 +4,15 @@
       <span class="mdl-layout-title">Angular2 Forms DEMO</span>
     </div>
     <div class="mdl-navigation">
-      <div class="form-group" style="padding: 0 30px; margin-bottom:5px;">
-        <label for="demo">Select demo to load:</label>
-        <select class="form-control" id="demo" (input)="select($event)">
-          <option *ngFor="#demo of demos" [value]="demo.name">
-            {{ demo.name }}
-          </option>
-        </select>
-      </div>
+      <!--<div class="form-group" style="padding: 0 30px; margin-bottom:5px;">-->
+        <!--<label for="demo">Select demo to load:</label>-->
+        <!--<select class="form-control" id="demo" (change)="select($event)">-->
+          <!--<option *ngFor="#demo of demos" [value]="demo.name">-->
+            <!--{{ demo.name }}-->
+          <!--</option>-->
+        <!--</select>-->
+      <!--</div>-->
+      <select-box [value]="demos" (onChange)="onSelect($event)"></select-box>
       <!--<a class="nav-link" [routerLink]="['BasicForm']">Basic Form</a>-->
       <!--<a class="nav-link intermediate" [routerLink]="['IntermediateForm']">Intermediate Form</a>-->
       <!--<a class="nav-link advanced" [routerLink]="['AdvancedForm']">Advanced Form</a>-->

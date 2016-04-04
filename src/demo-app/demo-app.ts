@@ -3,11 +3,12 @@ import { Router, Instruction, ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig }
 import { BasicFormDemo } from '../components/basic-form/basic-form';
 import { IntermediateFormDemo } from '../components/intermediate-form/intermediate-form';
 import { AdvancedFormDemo } from '../components/advanced-form/advanced-form';
+import { SelectBox } from '../core/select-box/select-box';
 
 @Component({
   selector: 'demo-app',
   templateUrl: 'demo-app/demo-app.component.html',
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES, SelectBox],
   providers: [ROUTER_PROVIDERS],
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['demo-app/demo-app.component.css']
@@ -23,7 +24,6 @@ export class AppComponent implements OnInit {
   
   demos: Array<any>;
   // selectValue: EventEmitter<any> = new EventEmitter<any>();
-  
   constructor(private _router: Router) {
     this.demos = [
       {
@@ -43,9 +43,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  select(event): void {
-    console.log('value changed: ', event.target.value);
-    let destination:Instruction = event.target.value.split(' ').join('');
+  onSelect(event): void {
+    console.log('onSelectEvent: ', event.value);
+    let destination:Instruction = event.value.split(' ').join('');
     console.log('Destination: ', destination);
     this._router.navigate([destination]);
   }
