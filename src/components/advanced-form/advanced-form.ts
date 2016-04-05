@@ -6,7 +6,7 @@ import { QuestionModel, TextBoxQuestion, DropDownQuestion } from './model/model'
   selector: 'advanced-form',
   directives: [Survey],
   template: `
-    <div class="content">
+    <div class="content layout-margin">
       <h5>Advanced Form Examples</h5>
       <hr class="border">
       <survey [model]="questionModel"></survey>
