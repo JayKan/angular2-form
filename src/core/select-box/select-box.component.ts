@@ -28,10 +28,10 @@ export class SelectBox implements OnInit {
   ngOnInit(): void {
     // set default to basic-form example
     this.valueChange.emit({
-      value: 'Basic Form'
+      value: 'Flatty Login'
     })
   }
-
+  
   change(event): void {
     let destination:Instruction = event.target.value.split(' ').join('');
     this.valueChange.emit({
