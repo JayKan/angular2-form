@@ -4254,11 +4254,12 @@ input.mdl-button[type="submit"] {
     display: block;
     position: relative;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 1;
     letter-spacing: .02em;
-    font-weight: 400;
-    box-sizing: border-box
+    font-weight: 500;
+    box-sizing: border-box;
+    color: #464646;
 }
 
 .mdl-layout-spacer {

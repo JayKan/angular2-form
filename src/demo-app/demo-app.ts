@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation, OnInit, EventEmitter } from 'angular2/core';
-import { Router, Instruction, ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
+import { Component, ViewEncapsulation, OnInit } from 'angular2/core';
+import { Router, RouteParams, Instruction, ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
 import { BasicFormDemo } from '../components/basic-form/basic-form';
 import { IntermediateFormDemo } from '../components/intermediate-form/intermediate-form';
 import { AdvancedFormDemo } from '../components/advanced-form/advanced-form';
@@ -23,30 +23,19 @@ import { SelectBox } from '../core/select-box/select-box';
 export class AppComponent implements OnInit {
   
   demos: Array<any>;
-  // selectValue: EventEmitter<any> = new EventEmitter<any>();
-  constructor(private _router: Router) {
+
+  constructor(private _router: Router) {}
+
+  ngOnInit(): void {
     this.demos = [
-      {
-        path: '/basic-form',
-        name: 'Basic Form'
-      },
-      {
-        path: '/intermediate-form',
-        name: 'Intermediate Form'
-      },
-      {
-        path: '/advanced-form',
-        name: 'Advanced Form'
-      }
+      { path: '/basic-form',        name: 'Basic Form'          },
+      { path: '/intermediate-form', name: 'Intermediate Form'   },
+      { path: '/advanced-form',     name: 'Advanced Form'       }
     ];
   }
 
-  ngOnInit(): void {}
-
   onSelect(event): void {
-    console.log('onSelectEvent: ', event.value);
     let destination:Instruction = event.value.split(' ').join('');
-    console.log('Destination: ', destination);
     this._router.navigate([destination]);
   }
 }

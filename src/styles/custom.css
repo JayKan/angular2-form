@@ -83,12 +83,7 @@ hr.border {
 }
 
 .mdl-navigation {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+    display: block;
     box-sizing: border-box;
     background-color: rgb(216, 162, 5);
     padding-top: 8px;
