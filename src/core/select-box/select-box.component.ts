@@ -28,7 +28,7 @@ export class SelectBox implements OnInit {
   ngOnInit(): void {
     // set default to basic-form example
     this.valueChange.emit({
-      value: 'Flatty Login'
+      value: 'Basic Form'
     })
   }
   
