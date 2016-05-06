@@ -36,6 +36,7 @@ export const APP_ASSETS: InjectableDependency[] = [
   { src: `${ASSETS_SRC}/main.css`, inject: true, dest: CSS_DEST }
 ];
 
+
 // Declare NPM dependencies (Note that globs should not be injected).
 export const DEV_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencies([
   { src: 'systemjs/dist/system-polyfills.src.js', inject: 'shims', dest: JS_DEST    },
@@ -43,10 +44,20 @@ export const DEV_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencie
   { src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: JS_DEST              },
   { src: 'es6-shim/es6-shim.js', inject: 'shims', dest: JS_DEST                     },
   { src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: JS_DEST                        },
-  { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: JS_DEST   },
-  { src: 'angular2/bundles/angular2.js',  inject: 'libs', dest: JS_DEST             },
-  { src: 'angular2/bundles/router.js',    inject: 'libs', dest: JS_DEST             },
-  { src: 'angular2/bundles/http.js',      inject: 'libs', dest: JS_DEST             },
+  // { src: '@angular/common/index.js', inject: 'libs', dest: JS_DEST                  },
+  // { src: '@angular/compiler/index.js', inject: 'libs', dest: JS_DEST                  },
+  // { src: '@angular/core/index.js', inject: 'libs', dest: JS_DEST                  },
+  // { src: '@angular/http/index.js', inject: 'libs', dest: JS_DEST                  },
+  // { src: '@angular/platform-browser/index.js', inject: 'libs', dest: JS_DEST          },
+  // { src: '@angular/platform-browser-dynamic/index.js', inject: 'libs', dest: JS_DEST          },
+  // { src: '@angular/router/index.js', inject: 'libs', dest: JS_DEST          },
+  // { src: '@angular/router-deprecated/index.js', inject: 'libs', dest: JS_DEST          },
+  // { src: '@angular/upgrade/index.js', inject: 'libs', dest: JS_DEST          },
+
+  // { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: JS_DEST   },
+  // { src: 'angular2/bundles/angular2.js',  inject: 'libs', dest: JS_DEST             },
+  // { src: 'angular2/bundles/router.js',    inject: 'libs', dest: JS_DEST             },
+  // { src: 'angular2/bundles/http.js',      inject: 'libs', dest: JS_DEST             },
 ]);
 
 export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencies([
@@ -54,7 +65,7 @@ export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependenci
   { src: 'reflect-metadata/Reflect.js', inject: 'shims'                             },
   { src: 'es6-shim/es6-shim.min.js', inject: 'shims'                                },
   { src: 'systemjs/dist/system.js', inject: 'shims'                                 },
-  { src: 'angular2/bundles/angular2-polyfills.min.js', inject: 'libs'               },
+  // { src: 'angular2/bundles/angular2-polyfills.min.js', inject: 'libs'               },
 ]);
 
 export const DEV_DEPENDENCIES   = DEV_NPM_DEPENDENCIES.concat(APP_ASSETS);

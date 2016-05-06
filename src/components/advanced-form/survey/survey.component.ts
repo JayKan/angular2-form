@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from 'angular2/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { QuestionModel } from '../model/model';
-import { ControlGroup, FormBuilder } from 'angular2/common';
+import { ControlGroup, FormBuilder } from '@angular/common';
 import { ControlMessages } from '../../../core/control-messages/control-messages';
 
 @Component({

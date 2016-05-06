@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation, OnInit } from 'angular2/core';
-import { Router, RouteParams, Instruction, ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Router, ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig, Instruction } from '@angular/router-deprecated';
 import { BasicFormDemo } from '../components/basic-form/basic-form';
 import { IntermediateFormDemo } from '../components/intermediate-form/intermediate-form';
 import { AdvancedFormDemo } from '../components/advanced-form/advanced-form';

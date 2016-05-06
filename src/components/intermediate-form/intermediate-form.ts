@@ -1,5 +1,5 @@
-import { Component, OnInit } from 'angular2/core';
-import { ControlGroup, FormBuilder, Validators } from 'angular2/common';
+import { Component, OnInit } from '@angular/core';
+import { ControlGroup, FormBuilder, Validators } from '@angular/common';
 import { CustomValidators } from '../../core/validators';
 import { ControlMessages } from '../../core/control-messages/control-messages';
 

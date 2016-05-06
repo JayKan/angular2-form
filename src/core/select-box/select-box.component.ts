@@ -1,5 +1,5 @@
-import { Component, ViewEncapsulation, Input, Output, OnInit, EventEmitter } from 'angular2/core';
-import { Instruction } from 'angular2/router';
+import { Component, ViewEncapsulation, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { Instruction } from '@angular/router-deprecated';
 
 @Component({
   selector: 'select-box',
