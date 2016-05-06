@@ -18,6 +18,7 @@ npm install -g typings
 Then you can run: 
 
 ```bash
+nvm use
 npm install 
 ```
 

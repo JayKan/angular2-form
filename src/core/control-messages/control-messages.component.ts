@@ -1,5 +1,5 @@
-import { Component, Host, Input, OnInit } from 'angular2/core';
-import { NgFormModel } from 'angular2/common';
+import { Component, Host, Input, OnInit } from '@angular/core';
+import { NgFormModel } from '@angular/common';
 import { CustomValidators } from '../validators';
 
 @Component({

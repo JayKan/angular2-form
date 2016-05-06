@@ -1,4 +1,4 @@
-import { Validators } from 'angular2/common';
+import { Validators } from '@angular/common';
 import { CustomValidators } from '../../../core/validators';
 
 export class QuestionModel {

@@ -1,5 +1,5 @@
-import { Component, OnInit } from 'angular2/core';
-import { NgForm } from 'angular2/common';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/common';
 import { BasicFormModel } from './basic-form.model';
 import { uniqueId } from '../../core/unique-id';
 

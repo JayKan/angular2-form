@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from 'angular2/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'flatty-login',
@@ -201,8 +201,5 @@ import { Component, ViewEncapsulation } from 'angular2/core';
   `
 })
 export class FlattyLogin {
-
-  constructor() {
-
-  }
+  
 }
