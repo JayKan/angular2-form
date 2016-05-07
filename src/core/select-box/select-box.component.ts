@@ -9,7 +9,7 @@ import { Instruction } from '@angular/router-deprecated';
     <div class="form-group" style="padding: 0 30px; margin-bottom:5px;">
       <label for="demo">Select example to load:</label>
       <select class="form-control" id="demo" (input)="change($event)">
-        <option *ngFor="#demo of demos" [value]="demo.name">
+        <option *ngFor="let demo of demos" [value]="demo.name">
           {{ demo.name }}
         </option>
       </select>

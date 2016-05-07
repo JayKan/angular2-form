@@ -37,7 +37,7 @@
               #power="ngForm"
               required
       >
-        <option *ngFor="#p of powers" [value]="p">{{ p }}</option>
+        <option *ngFor="let p of powers" [value]="p">{{ p }}</option>
       </select>
       <div *ngIf="!power.valid && power.touched" class="alert alert-danger">Power is required</div>
     </div>
