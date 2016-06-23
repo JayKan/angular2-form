@@ -4,13 +4,13 @@
     <div *ngFor="let question of model.questions" class="form-group">
       <label [attr.for]="question.key">{{ question.text }}</label>
       <div [ngSwitch]="question.controlType">
-        <div *ngSwitchWhen="'textbox'">
+        <div *ngSwitchCase="'textbox'">
           <input class="form-control"
                  [type]="question.type"
                  [id]="question.key"
                  ngControl="{{ question.key }}">
         </div>
-        <div *ngSwitchWhen="'dropdown'">
+        <div *ngSwitchCase="'dropdown'">
           <select class="form-control" id="{{ question.key }}" ngControl="{{ question.key }}">
             <option *ngFor="let o of question.options" [value]="o.key">{{ o.value }}</option>
           </select>
