@@ -1,28 +1,29 @@
 <div class="content layout-margin">
   <h5>Basic Form Example</h5>
   <hr class="border">
-  <form *ngIf="active" (ngSubmit)="onSubmit()" #basicForm="ngForm">
-    <pre>{{ diagnostic }}</pre>
+  <form *ngIf="active" (ngSubmit)="onSubmit(form.value)" #form="ngForm" novalidate>
+    <pre>{{ diagnostic(form.value) }}</pre>
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text"
              id="name"
+             name="name"
              class="form-control"
-             [(ngModel)]="model.name"
-             ngControl="name"
-             #name="ngForm"
-             required>
+             #name="ngModel"
+             ngModel
+             required
+      >
       <div *ngIf="!name.valid && name.touched" class="alert alert-danger">Name is required</div>
     </div>
 
     <div class="form-group">
-      <label for="Description">Description</label>
+      <label for="description">Description</label>
       <input type="text"
-             id="Description"
+             id="description"
              class="form-control"
-             [(ngModel)]="model.description"
-             ngControl="description"
-             #description="ngForm"
+             name="description"
+             #description="ngModel"
+             ngModel
              required
       >
       <div *ngIf="!description.valid && description.touched" class="alert alert-danger">Description is required</div>
@@ -32,9 +33,9 @@
       <label for="power">Hero Power</label>
       <select class="form-control"
               id="power"
-              [(ngModel)]="model.power"
-              ngControl="power"
-              #power="ngForm"
+              name="power"
+              ngModel
+              #power="ngModel"
               required
       >
         <option *ngFor="let p of powers" [value]="p">{{ p }}</option>
@@ -42,7 +43,7 @@
       <div *ngIf="!power.valid && power.touched" class="alert alert-danger">Power is required</div>
     </div>
 
-    <button type="submit" class="btn btn-default" [disabled]="!basicForm.form.valid">Submit</button>
+    <button type="submit" class="btn btn-default" [disabled]="!form.valid">Submit</button>
     <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
 
     <hr>

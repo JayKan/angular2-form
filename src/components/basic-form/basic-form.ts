@@ -13,17 +13,16 @@ export class BasicFormDemo implements OnInit {
   active: boolean = true;
   powers: Array<string> = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
   payload: string;
-
-  // basic-form model
-  model = new BasicFormModel(uniqueId(), 'Jay Kan', this.powers[0], 'Default sample description...');
+  
+  // model = new BasicFormModel(uniqueId(), 'Jay Kan', this.powers[0], 'Default sample description...');
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  onSubmit(): void {
+  onSubmit(formValue: string): void {
     this.submitted = true;
-    this.payload = JSON.stringify(this.model, null, 2);
+    this.payload = JSON.stringify(formValue, null, 2);
   }
 
   newHero(): void {
@@ -37,7 +36,7 @@ export class BasicFormDemo implements OnInit {
            form.controls['name'].value;
   }
 
-  get diagnostic() {
-    return JSON.stringify(this.model);
+  diagnostic(formValue: string): string {
+    return JSON.stringify(formValue);
   }
 }
