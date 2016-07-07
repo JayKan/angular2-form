@@ -1,22 +1,26 @@
-import { Component, Host, Input, OnInit } from '@angular/core';
-import { NgFormModel } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, REACTIVE_FORM_DIRECTIVES } from '@angular/forms';
 import { CustomValidators } from '../validators';
 
 @Component({
   selector: 'control-messages',
+  directives: [REACTIVE_FORM_DIRECTIVES],
   templateUrl: 'core/control-messages/control-messages.component.html'
 })
 export class ControlMessages implements OnInit {
   
   @Input('control')
   controlName: string;
+
+  @Input('parent-form')
+  parentForm: FormGroup;
   
-  constructor(@Host() private _formDir: NgFormModel) {}
+  constructor() {}
   
   ngOnInit(): void {}
   
   get errorMessages(): any {
-    let control = this._formDir.form.find(this.controlName);
+    let control = this.parentForm.find(this.controlName);
     for (let propertyName in control.errors) {
       if (control.errors.hasOwnProperty(propertyName) && control.touched) {
         return CustomValidators.getValidatorErrorMessage(propertyName, _normalize(this.controlName));

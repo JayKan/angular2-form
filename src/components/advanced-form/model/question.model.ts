@@ -1,4 +1,4 @@
-import { Validators } from '@angular/common';
+import { Validators } from '@angular/forms';
 import { CustomValidators } from '../../../core/validators';
 
 export class QuestionModel {
@@ -28,6 +28,7 @@ export class QuestionModel {
       
       group[question.key].push(Validators.compose(_validators));
     });
+    console.log('Qustion Group being ini() -------: ', group);
     return group;
   }
 }

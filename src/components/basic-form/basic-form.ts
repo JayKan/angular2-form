@@ -13,8 +13,7 @@ export class BasicFormDemo implements OnInit {
   active: boolean = true;
   powers: Array<string> = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
   payload: string;
-  
-  // model = new BasicFormModel(uniqueId(), 'Jay Kan', this.powers[0], 'Default sample description...');
+
 
   constructor() {}
 
@@ -26,7 +25,6 @@ export class BasicFormDemo implements OnInit {
   }
 
   newHero(): void {
-    this.model = new BasicFormModel(uniqueId(), '', '', '');
     this.active = true;
     this.submitted = false;
   }
