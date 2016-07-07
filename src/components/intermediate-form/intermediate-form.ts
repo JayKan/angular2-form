@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ControlGroup, FormBuilder, Validators } from '@angular/common';
+import { REACTIVE_FORM_DIRECTIVES, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CustomValidators } from '../../core/validators';
 import { ControlMessages } from '../../core/control-messages/control-messages';
 
@@ -10,24 +10,24 @@ import { ControlMessages } from '../../core/control-messages/control-messages';
 @Component({
   selector: 'intermediate-form',
   templateUrl: 'components/intermediate-form/intermediate-form.component.html',
-  directives: [ControlMessages]
+  directives: [ControlMessages, REACTIVE_FORM_DIRECTIVES]
 })
 export class IntermediateFormDemo implements OnInit {
 
   /**
    * @property myForm
-   * @type {ControlGroup}
+   * @type {FormGroup}
    * Current component formControls in terms of adding
    * validators and data binding for your custom form.
    */
-  myForm: ControlGroup;
+  myForm: FormGroup;
   submitted: boolean = false;
   formData: string;
   
-  constructor(private _builder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder) {}
   
   ngOnInit(): void {
-    this.myForm = this._builder.group({
+    this.myForm = this._formBuilder.group({
       'firstName': ['Test', Validators.compose([Validators.required, CustomValidators.stringValidator])],
       'lastName': ['User', Validators.compose([Validators.required, CustomValidators.stringValidator])],
       'email': ['test.user@gmail.com', Validators.compose([CustomValidators.emailValidator, Validators.required])],
@@ -37,19 +37,14 @@ export class IntermediateFormDemo implements OnInit {
     });
   }
 
-  onSubmit(): void {
+  onSubmit(formValue: string): void {
     this.submitted = true;
-    console.log(this.myForm);
-    this.formData  = JSON.stringify(this.myForm.value, null, 2);
+    this.formData  = JSON.stringify(formValue, null, 2);
   }
 
   clear(): void {
     for (let c in this.myForm.controls) {
-      this.myForm.controls[c].updateValue('');
+      // this.myForm.controls[c].updateValue('');
     }
-  }
-
-  get debug(): string {
-    return JSON.stringify(this.myForm.value, null, 2);
   }
 }
