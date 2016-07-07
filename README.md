@@ -25,7 +25,7 @@ npm install
 To start the **demo-app**, use:
 
 ```bash
-npm run demo-app
+npm start
 ```
 
 
