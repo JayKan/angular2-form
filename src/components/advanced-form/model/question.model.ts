@@ -28,7 +28,7 @@ export class QuestionModel {
       
       group[question.key].push(Validators.compose(_validators));
     });
-    console.log('Qustion Group being ini() -------: ', group);
+    
     return group;
   }
 }
