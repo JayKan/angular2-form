@@ -1,3 +1,54 @@
+
+import { Directive, forwardRef, provide, Attribute } from '@angular/core';
+import { Validator, NG_VALIDATORS, AbstractControl} from '@angular/forms';
+
+@Directive({
+  selector: '[validateEqual][formControlName],[validateEqual][formControl],[validateEqual][ngModel]',
+  providers: [
+    provide(NG_VALIDATORS, { useExisting: forwardRef(() => EqualValidator), multi: true })
+  ]
+})
+export class EqualValidator implements Validator {
+
+  constructor(@Attribute('validateEqual') public validateEqual: string,
+              @Attribute('reverse') public reverse: string) {}
+
+  validate(c: AbstractControl): { [key: string]: any } {
+    // self value
+    let v = c.value;
+
+    // control value
+    let e = c.root.find(this.validateEqual);
+
+    // value not equal
+    if (e && v !== e.value && !this._isReverse) {
+      return {
+        validateEqual: false
+      };
+    }
+
+    // value equal and reverse
+    if (e && v === e.value && this._isReverse) {
+      delete e.errors['validateEqual'];
+      if (!Object.keys(e.errors).length) e.setErrors(null);
+    }
+
+    // value not equal and reverse
+    if (e && v !== e.value && this._isReverse) {
+      e.setErrors({
+        validateEqual: false
+      })
+    }
+    return null;
+  }
+
+  private get _isReverse() {
+    if (!this.reverse) return false;
+    return this.reverse === 'true' ? true: false;
+  }
+}
+
+
 export class CustomValidators {
 
   static getValidatorErrorMessage(code: string, description: string = 'Current field'): string {
